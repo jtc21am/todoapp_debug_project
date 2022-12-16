@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block navbutton %}
+    <a href="{% url 'home' %}"><button type="button">Home</button></a>
+{% endblock %}
+
+{% block title %}Notes to Self{% endblock %}
+
+{% block form %}
+    <form action="{% url 'notes' %}" method="POST">
+        {% csrf_token %}
+        {{ note_form }}
+        <input type="submit" name="create" value="Create" />
+        <input type="submit" name="delete" value="Delete" />
+    </form>
+{% endblock %}
+
+{% block content %}
+    <hr/>
+    {% if note_list %}
+        <h3>Click a note and click Delete to delete:</h3>
+    {% endif %}
+
+    <ul style="list-style-type: '\1F536'">
+        {% for note in note_list %}
+        <li>
+            <a href="#" onclick="(({{event}}) =>
+            document.querySelector('form').children[2].value = event.target.innerText.trim()
+            )()" style="text-decoration: none">&nbsp;{{ note.text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
