@@ -3,7 +3,7 @@ Django app for the purpose of debugging practice
 
 ## About
 
-This is a todo app undertaken for the purpose of learning the Django framework hands-on without having to attend to front-end matters.
+This is a todo app for the purpose of learning the Django framework hands-on without having to attend to front-end matters.
 
 Allow the user:
 * Keep a list of tasks
@@ -33,14 +33,12 @@ Install the packages from `requirements.txt`:
 $ pip install -r requirements.txt
 ```
 
-In the `<your_project_direcotry_name>/todosite/` directory run the following command to start the server:
+In the `<your_project_directory_name>/todosite/` directory run the following command to start the server:
 
 ```bash
 $ cd todosite
 $ python3 manage.py runserver
 ```
-
-And you can take the app further with your own tweaks. The steps in the above are for Mac and Linux users. Please look up online for equivalent commands for Windows machines.
 
 ### 
 
