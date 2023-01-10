@@ -67,6 +67,7 @@ class TaskDetailView(View):
                 task_description = form.cleaned_data['description']
                 task = Task.objects.filter(id=task_id)
                 task.update(description=task_description)
+
         elif 'comment' in request.POST:
             form = CommentForm(request.POST)
             if form.is_valid():
@@ -74,6 +75,7 @@ class TaskDetailView(View):
                 if Comment.objects.filter(content=comment_content).count() == 0:
                     task = Task.objects.get(id=task_id)
                     Comment.objects.create(content=comment_content, task=task)
+
         elif 'remove' in request.POST:
             form = CommentForm(request.POST)
             if form.is_valid():

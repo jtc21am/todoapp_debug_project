@@ -65,9 +65,11 @@
         {% for comment in comments %}
         <li>
             <a href="#" onclick="(({{event}}) =>
-            document.getElementById('comment').children[1].value = event.target.innerText.trim()
+            document.getElementById('comment').children[2].value = event.target.innerText.trim()
             )()" style="text-decoration: none">&nbsp;{{ comment.content }}</a>
         </li>
+
+
         {% endfor %}
     </ul>
 {% endblock %}
